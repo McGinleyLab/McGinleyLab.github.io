@@ -22,58 +22,63 @@ But without authorization, you will get an error message when trying to pull (up
 2. Install Git Desktop, which is the easiest way to work with repository on a local machine.
 
 3. Generate token.
-Under account setting, go to Developer settings--Personal access token--Tokens(Classic) and generate a new token with/without expiration date.
+Under account setting, go to Developer settings--Personal access token--Tokens(Classic) and generate a new token with/without expiration date.\
 You need to keep this token as this is your password for modifying repository from now on.
 
 4. SSH Key.
 SSH key has private and public part. It allows GitHub to recognize your computer with the public key. To generate it:
+
 Linux:
-	'''
-	mkdir -p ~/.ssh
+- Generate ssh key:
+	``` 
+ 	mkdir -p ~/.ssh
 	ssh-keygen -t ed25519 -C "email used for GitHub"
-	'''
-You can enter through the prompt asking for setting name and pass.
-	'''
-	ls -al ~/.ssh
-	'''
-There should be files named ed25519 and ed25519.pub if you did not set the name yourself
-	'''
-	eval "$(ssh-agent -s)"
-	ssh-add ~/.ssh/id_ed25519
-	'''
+	```
+
+- You can skip through the prompt asking for setting name and pass.
+ 	```
+ 	ls -al ~/.ssh
+  	```
+
+- There should be files named **ed25519** and **ed25519.pub** if you did not set the name yourself.\
+Next you need a ssh-agent to link the private key to your computer:
+ 	```
+  	eval "$(ssh-agent -s)"
+  	ssh-add ~/.ssh/id_ed25519
+   	```
 
 Windows:
-MS
-Add powershell folder to PATH
+- Add powershell folder to PATH
 
 - Set the sshd service to be started automatically
-'''
-Get-Service -Name sshd | Set-Service -StartupType Automatic
-'''
+	```
+	Get-Service -Name sshd | Set-Service -StartupType Automatic
+	```
 
 - Start the sshd service
-'''
-Start-Service sshd
-ssh-keygen -t ed25519
-'''
+	```
+	Start-Service sshd
+	ssh-keygen -t ed25519
+	```
 
 - By default the ssh-agent service is disabled. Configure it to start automatically.\
 Make sure you're running as an Administrator.
-'''
-Get-Service ssh-agent | Set-Service -StartupType Automatic
-'''
+	```
+	Get-Service ssh-agent | Set-Service -StartupType Automatic
+	```
 
 - Start the service
-'''
-Start-Service ssh-agent
-Get-Service ssh-agent
-'''
+	```
+	Start-Service ssh-agent
+	Get-Service ssh-agent
+	```
 
 - Load your key files into ssh-agent
-'''
-ssh-add $env:USERPROFILE\.ssh\id_ed25519
-'''
+	```
+	ssh-add $env:USERPROFILE\.ssh\id_ed25519
+	```
 
-Open ed25519.pub and copy the key to GitHub under Settings--SSH and GPG keys--New SSH key
+- Open ed25519.pub and copy the key to GitHub under Settings--SSH and GPG keys--New SSH key\
 Key type = Authentication Key
- 
+
+- Make sure to use ssh instead of https when cloning repository 
