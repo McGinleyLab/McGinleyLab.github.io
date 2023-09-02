@@ -15,12 +15,16 @@ But without authorization, you will get an error message when trying to push (up
 The advantage of this method is easier to pull (download) updates from the original lab repository.
 
 - You can alway use **git remote** function to change origin or add upstream for the repository.\
-For expample if you have premission to push the repository at McGinleyLab, it will be a good idea to still fork the repository to your own github,
-then use:
+For expample, if you have premission to push the repository at McGinleyLab, it would be a good idea to still fork the repository to your own github,
+clone the forked repo, then use:
 	```
  	git remote add upstream git@respotiry_address (git@respotiry_address is the repository at McGinleyLab)
  	```
-	This way you can work freely with your repository and push or pull the master repository (upstream) at McGinleyLab whenever needed.
+	This way you can work freely with your repository and push or pull the master repository (upstream) at McGinleyLab whenever needed, by using:
+	```
+ 	git pull upstream main
+ 	git push upstream
+ 	```
 
 ## Credential
 - You need a credential other then the account password to make change to the repository. There are serveral ways:
