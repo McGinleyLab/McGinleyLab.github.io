@@ -32,12 +32,13 @@ clone the forked repo, then use:
 
 2. Install Git Desktop, which is the easiest way to work with repository on a local machine.
 
-3. Generate token.
+3. Generate token.\
 Under account setting, go to *Developer settings--Personal access token--Tokens(Classic)* and generate a new token with/without expiration date.\
 You need to keep this token as this is your password for modifying repository from now on until expired (well you can always generate a new one but not a good practice).
 
-4. SSH Key.
-SSH key has private and public part. GitHub uses the pulic key you submit to match with the local key on your computer to be able to recognize it.
+4. Generate SSH Key.\
+SSH key has private and public part. GitHub uses the public key you submit to match with the local key on your computer to be able to recognize it.\
+For server account or personal PC that belong to you, this is probably the best way and only way to use GitHub ssh clone.
 - To generate the key:
 
 	Linux:
