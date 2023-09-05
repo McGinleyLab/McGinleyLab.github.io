@@ -3,7 +3,7 @@
 - There are three ways you can work with the repositories (original) in the lab GitHub:
 Fork, Copy code and Clone
 
-1. Forking clones the repostiroy to create a new one, you work and update change to your forked repository but you can submit a push request to merge the change your make one the forked repository to the original one.
+1. Forking clones the repostiroy to create a new one, you work and update change to your forked repository but you can submit a push request to merge the change your make on the forked repository to the original one.
 Use fork if the code is still under construction and you want to contribute to the development.
 
 3. You can start a new repository in your GitHub and choose copy code to copy the repository at McGinleyLab.
